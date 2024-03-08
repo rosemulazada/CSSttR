@@ -4,9 +4,10 @@ My repository for the final assignment for CSS to the Rescue, Web Design and Dev
 
 ## Table of Contents
 
--   [Introduction to the assignment](#introduction-to-the-assignment)- [Installation](#installation)
+-   [Introduction to the assignment](#introduction-to-the-assignment)
+-   [Installation](#installation)
 -   [My project](#my-project)
-        -   [CSS features I want to use](#css-features-i-want-to-use)
+-   [CSS features I want to use](#css-features-i-want-to-use)
 -   [Usage and Features](#usage-and-features)
 -   [Reflection](#Reflection)
 -   [Version log](#versionchange-log)
