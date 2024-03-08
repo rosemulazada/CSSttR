@@ -1,140 +1,30 @@
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* :root {
-} */
+html {
+    height: 100dvh;
+}
+
+/* custom properties */
+/* TBA */
 
 body {
-    height: 100dvh;
-    width: 100dvw;
-}
-
-/**======================
- *      CODE START
- *========================**/
-
-body > section {
+    min-height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    height: 100%;
+    justify-content: center;
 }
 
-/* input buttons on the left */
-input {
-    /*   hide the checkboxes from view, then place them over top of the checkboxes that were made with :before. */
-    opacity: 0;
-    position: absolute;
-}
+/*======================
+ *      CODE START
+ *======================*/
 
-input,
-label {
-    display: inline-block;
-    margin: 5px;
-    cursor: pointer;
-}
-
-/* label {
-    position: relative;
-} */
-
-input + label:before {
-    color: #fff;
-    background: rebeccapurple;
-    border: 2px solid #ddd;
-    display: inline-block;
-    vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    margin-right: 10px;
-    text-align: center;
-    border-radius: 100%;
-}
-
-/* set icon */
-div:first-of-type input + label:before {
-    content: "△";
-}
-
-div:nth-of-type(2) input + label:before {
-    content: "□";
-}
-
-div:nth-of-type(3) input + label:before {
-    content: "⨯";
-}
-
-div:nth-of-type(4) input + label:before {
-    content: "○";
-}
-
-/* if the checkbox is checked and the next sibling is .checkbox-custom-label.. */
-div:first-of-type input:checked + label:before {
-    content: "△";
-    background: black;
-    color: #fff;
-}
-
-div:nth-of-type(2) input + label:before {
-    /*   vertical-align: middle; */
-    background: rebeccapurple;
-    color: #fff;
-}
-
-div:nth-of-type(3) input:checked + label:before {
-    font-weight: 100;
-    background: rebeccapurple;
-    color: #fff;
-}
-
-div:last-of-type input:checked + label:before {
-    background: rebeccapurple;
-    color: #fff;
-}
-
-section > section > section > section {
-    position: relative;
-    height: fit-content;
-    width: 100vw;
-}
-
-img {
-    height: 100%;
+body > div > img[src="./assets/svgs/psp-foreground.svg"] {
     width: 100%;
-}
-
-article {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 60%;
-    height: 80%;
-    background-color: black;
-}
-
-article > div {
-    position: absolute;
-    background: blue;
-    width: 10%;
-    height: 15%;
-    bottom: 0;
-}
-
-html:has(input[type="checkbox"]:checked) article > div {
-    animation: jump 3s ease;
-}
-
-@keyframes jump {
-    from {
-        transform: translateY(0);
-    }
-
-    to {
-        transform: translateY(-100%);
-    }
+    height: 100%;
 }
