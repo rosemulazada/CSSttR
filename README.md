@@ -43,6 +43,7 @@ The PSP has a few things to note.
 3. The screen.
 
 ### CSS features I want to use
+```:has()``` is one that I'm fascinated by, and one that I know will be the feature every other student names too but it comes with good reason. It's like a little slice of JavaScript in CSS, which to me is fascinating and I'm excited to learn about what other possibilities will be implemented from ```:has()``` in the future. But I plan to use ```:has(input:checked)``` to toggle an animation on the PSP screen, when the input is checked: the input being the PSP buttons which I've styled.
 
 ## Usage and Features
 
