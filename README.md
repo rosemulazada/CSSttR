@@ -7,6 +7,7 @@ My repository for the final assignment for CSS to the Rescue, Web Design and Dev
 -   [Introduction to the assignment](#introduction-to-the-assignment)
 -   [Installation](#installation)
 -   [My project](#my-project)
+    -   [Before any code: what are my thoughts/plans?](#before-any-code-what-are-my-thoughtsplans)
     -   [CSS features I want to use](#css-features-i-want-to-use)
 -   [Usage and Features](#usage-and-features)
 -   [Reflection](#Reflection)
@@ -33,7 +34,9 @@ Inspired by the module option of this assignment, I quickly found myself graspin
 
 ![PSP device](https://images.versus.io/objects/sony-psp-3000.front.variety.1591878256408.jpg)
 
-It has a couple things to note.
+### Before any code: what are my thoughts/plans?
+
+The PSP has a few things to note.
 
 1. Its unique shape.
 2. The buttons, which there are at least eight of excluding the power button.
