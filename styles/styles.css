@@ -13,7 +13,11 @@ html {
 /* custom properties */
 :root {
     /* basic colors */
-    --psp-foreground: #1d1d22;
+    --psp-foreground: #28282f;
+
+    /* states */
+    /* button: default */
+    --button-shading: #000;
 }
 
 body {
@@ -53,12 +57,24 @@ body > div > div > div:first-child {
     grid-column-end: 1;
 }
 
+/* the screen */
+/* TODO: add 'screen off' styling */
+/* TODO: add 'borders' styling for depth using box-shadow */
 body > div > div > div:nth-child(2) {
-    border: blue 2px solid;
+    /* border: blue 2px solid; */
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 2;
     grid-column-end: 3;
+
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.246) 0%,
+        black 25%,
+        rgba(255, 255, 255, 0.093) 50%,
+        black 75%,
+        rgba(255, 255, 255, 0.246) 100%
+    );
 }
 
 body > div > div > div:nth-child(3) {
@@ -74,7 +90,10 @@ body > div > div > div:last-child {
     grid-column-start: 2;
 }
 
-/* styling for inputs on the right: analog */
+/* styling for inputs on the LEFT: D-PAD */
+/* TODO: the above */
+
+/* styling for inputs on the RIGHT: ANALOG */
 label {
     position: relative;
 }
@@ -107,16 +126,16 @@ body > div > div > div:nth-child(3) label:before {
     /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
     background-color: var(--psp-foreground);
     outline: none;
-    -webkit-box-shadow: inset 0px 0px 5px #000000;
-    -moz-box-shadow: inset 0px 0px 5px #000000;
-    box-shadow: inset 0px 0px 5px #000000;
+    -webkit-box-shadow: inset 0px 0px 5px var(--button-shading);
+    -moz-box-shadow: inset 0px 0px 5px var(--button-shading);
+    box-shadow: inset 0px 0px 5px var(--button-shading);
 }
 
 /* set icon */
-/* TODO: add color to 'content' */
 /* TODO: scale 'content' */
 /* TODO: position buttons */
 /* TODO: make button appear pressed */
+/* ?: does the current default styling look more pressed..? */
 body > div > div > div:nth-child(3) label:first-child:before {
     content: "△";
 }
@@ -137,7 +156,4 @@ body > div > div > div:nth-child(3) label:last-child:before {
 /* TODO: add styling for pressed button */
 /* TODO: if power on checkbox checked, change screen styling: work with one element, no classes ofc.  */
 /* body > div > div > div:nth-child(3):has(input:checked) label:before {
-    background-color: purple;
 } */
-
-/* TODO: add 'screen off' styling */
