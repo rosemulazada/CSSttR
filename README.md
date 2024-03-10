@@ -9,10 +9,11 @@ My repository for the final assignment for CSS to the Rescue, Web Design and Dev
 -   [My project](#my-project)
     -   [Before any code: what are my thoughts/plans?](#before-any-code-what-are-my-thoughtsplans)
     -   [CSS features I want to use](#css-features-i-want-to-use)
+-   [Takeaway from feedback](#takeaway-from-feedback)
 -   [Usage and Features](#usage-and-features)
 -   [Reflection](#Reflection)
 -   [Version log](#versionchange-log)
--   [External Data Sources](#external-data-sources)
+-   [External Sources](#external-sources)
 
 ## Introduction to the assignment
 
@@ -43,7 +44,20 @@ The PSP has a few things to note.
 3. The screen.
 
 ### CSS features I want to use
-```:has()``` is one that I'm fascinated by, and one that I know will be the feature every other student names too but it comes with good reason. It's like a little slice of JavaScript in CSS, which to me is fascinating and I'm excited to learn about what other possibilities will be implemented from ```:has()``` in the future. But I plan to use ```:has(input:checked)``` to toggle an animation on the PSP screen, when the input is checked: the input being the PSP buttons which I've styled.
+
+`:has()` is one that I'm fascinated by, and one that I know will be the feature every other student names too but it comes with good reason. It's like a little slice of JavaScript in CSS, which to me is fascinating and I'm excited to learn about what other possibilities will be implemented from `:has()` in the future. But I plan to use `:has(input:checked)` to toggle an animation on the PSP screen, when the input is checked: the input being the PSP buttons which I've styled.
+
+## Takeaway from feedback
+
+Every friday, we have a feedback session with four students total and the teacher for the class, where we show our work, what we're struggling with, what we'd like to do and help eachother progress. Here's a log of each session.
+
+### March 1st: Presenting our ideas
+
+### March 8th: The first intake
+
+### March 15th
+
+TBA
 
 ## Usage and Features
 
@@ -55,8 +69,12 @@ TBA.
 
 ## Version/Change log
 
+TBA.
+
 ### CSSttR V1
 
 TBA.
 
 ## External Sources
+
+1. ['Pressed button' styling (used for default state)](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css)
