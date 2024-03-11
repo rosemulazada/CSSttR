@@ -86,7 +86,7 @@ TBA.
 
 ### CSSttR V0.1.0
 
-**March 10th**
+**March 9th**
 
 I ended up starting over on this day because my layout was unclear and my code was messy. There wasn't much to do over, and it's a good thing I did do it, because it made the code so much easier to follow and work with, less conflicting properties, etc.
 
