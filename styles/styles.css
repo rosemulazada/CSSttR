@@ -18,6 +18,9 @@ html {
     /* states */
     /* button: default */
     --button-shading: #000;
+
+    /* text */
+    --text-color: #fff;
 }
 
 body {
@@ -52,7 +55,7 @@ body > div > div {
 }
 
 body > div > div > div:first-child {
-    border: red 2px solid;
+    /* border: red 2px solid; */
     grid-row-start: 3;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -78,7 +81,7 @@ body > div > div > div:nth-child(2) {
 }
 
 body > div > div > div:nth-child(3) {
-    border: green 2px solid;
+    /* border: green 2px solid; */
     grid-row-start: 3;
     grid-column-start: 3;
     grid-column-end: 3;
@@ -90,7 +93,7 @@ body > div > div > div:nth-child(3) {
 }
 
 body > div > div > div:last-child {
-    border: yellow 2px solid;
+    /* border: yellow 2px solid; */
     grid-row-start: 4;
     grid-column-start: 2;
 }
@@ -181,7 +184,7 @@ body
 
 /* grid analog-side */
 body > div > div > div:nth-child(3) > div:first-child {
-    background: red;
+    /* background: red; */
     grid-column-start: 1;
     grid-column-end: 4;
     height: 100%;
@@ -194,7 +197,7 @@ body > div > div > div:nth-child(3) > div:nth-child(2) {
     /* ! TURN THIS BACK ON */
     /* border: 1.5px solid black;
     border-radius: 100%; */
-    background: blue;
+    /* background: blue; */
     /* height: 100%;
     width: 70%; */
     margin-inline: auto;
@@ -209,18 +212,61 @@ body > div > div > div:nth-child(3) > div:nth-child(2) {
 }
 
 body > div > div > div:nth-child(3) > div:last-child {
-    background: rgba(255, 255, 0, 0.423);
+    /* background: rgba(255, 255, 0, 0.423); */
     height: 100%;
     width: 100%;
 
     /* grid for power/hold */
     display: grid;
     grid-template-rows: 0.35fr 1fr 1fr 0.35fr;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1.25fr 1fr 0.25fr;
 
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 3;
+}
+
+/* styling for the power/hold buttons */
+body > div > div > div:nth-child(3) > div:last-child > label {
+    font-family: Arial, sans-serif;
+    display: block;
+    text-transform: uppercase;
+    font-size: 0.6em;
+    color: var(--text-color);
+}
+
+body > div > div > div:nth-child(3) > div:last-child > label:first-of-type {
+    /* background: red; */
+    align-self: start;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    width: 100%;
+}
+
+body > div > div > div:nth-child(3) > div:last-child > label:last-of-type {
+    /* background: blue; */
+    align-self: end;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    width: 100%;
+}
+
+/* some padding next to the label */
+body > div > div > div:nth-child(3) > div:last-child > label > input {
+    margin-left: 0.4em;
+    filter: blur(2px);
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 100%;
+    appearance: unset;
+    -webkit-appearance: unset;
+    cursor: pointer;
 }
 
 /* position individual buttons */
@@ -251,6 +297,36 @@ body > div > div > div:nth-child(3) > div > label:last-child {
 /* functionality analog-side */
 /* TODO: add styling for pressed button */
 /* TODO: if power on checkbox checked, change screen styling: work with one element, no classes ofc.  */
-body > div > div > div:nth-child(3):has(input:checked) label:before {
+/* press power on */
+body > div > div > div:nth-child(3) > div:last-child > label > input:checked {
+    background-color: rgb(0, 255, 0);
+}
+
+body
+    > div
+    > div
+    > div:nth-child(3)
+    > div:last-child:has(label:first-child > input:checked)
+    label:last-child
+    input {
+    background-color: rgb(255, 166, 0);
+}
+
+body
+    > div
+    > div
+    > div:nth-child(3)
+    > div:last-child
+    > label:last-child
+    > input {
+    background-color: white;
+}
+
+body
+    > div
+    > div
+    > div:nth-child(3)
+    > div:nth-child(2):has(input:checked)
+    label:before {
     background-color: rebeccapurple;
 }
