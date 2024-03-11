@@ -312,6 +312,11 @@ body
     background-color: rgb(255, 166, 0);
 }
 
+/* turn screen on if powerbutton checked */
+body:has(label:first-child > input:checked) div[data-element="screen"] {
+    display: none;
+}
+
 body
     > div
     > div
