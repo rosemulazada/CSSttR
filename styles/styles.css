@@ -30,6 +30,7 @@ body {
 /*======================
  *      CODE START
  *======================*/
+/* ! todays goal: make the power button, then be able to turn the screen on */
 
 body > div {
     position: relative;
@@ -46,7 +47,7 @@ body > div > div {
     height: 100%;
     position: absolute;
     display: grid;
-    grid-template-columns: 0.2778fr 1fr 0.2778fr;
+    grid-template-columns: 0.355fr 1fr 0.355fr;
     grid-template-rows: 0.06897fr 0.03448fr 1fr 0.15fr 0.03448fr;
 }
 
@@ -58,7 +59,6 @@ body > div > div > div:first-child {
 }
 
 /* the screen */
-/* TODO: add 'screen off' styling */
 /* TODO: add 'borders' styling for depth using box-shadow */
 body > div > div > div:nth-child(2) {
     /* border: blue 2px solid; */
@@ -82,6 +82,11 @@ body > div > div > div:nth-child(3) {
     grid-row-start: 3;
     grid-column-start: 3;
     grid-column-end: 3;
+
+    /* position analog side main elements */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 0.5fr 1fr 0.65fr;
 }
 
 body > div > div > div:last-child {
@@ -96,7 +101,10 @@ body > div > div > div:last-child {
 /* styling for inputs on the RIGHT: ANALOG */
 label {
     position: relative;
+    align-self: center;
+    justify-self: center;
 }
+/* ! THEN ADD THE BORDER CIRCLE AS A :BEFORE THATS POSITIONED ABSOLUTELY TO THE DIV ALL THE BUTTONS ARE IN: SIZE THIS HOW YOU WANT */
 
 input {
     opacity: 0;
@@ -113,14 +121,15 @@ label {
     cursor: pointer;
 }
 
-body > div > div > div:nth-child(3) label:before {
+body > div > div > div:nth-child(3) > div > label:before {
     color: white;
     display: inline-block;
     vertical-align: middle;
-    width: 30px;
-    height: 30px;
-    padding: 2px;
-    margin-right: 10px;
+    /* TODO: make sure this width scales */
+    width: 35px;
+    height: 35px;
+    /* padding: 5px 10px; */
+    /* margin-right: 10px; */
     text-align: center;
     border-radius: 100%;
     /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
@@ -133,27 +142,92 @@ body > div > div > div:nth-child(3) label:before {
 
 /* set icon */
 /* TODO: scale 'content' */
-/* TODO: position buttons */
 /* TODO: make button appear pressed */
 /* ?: does the current default styling look more pressed..? */
-body > div > div > div:nth-child(3) label:first-child:before {
+body > div > div > div:nth-child(3) > div > label:first-child:before {
     content: "△";
 }
 
-body > div > div > div:nth-child(3) label:nth-child(2):before {
+body > div > div > div:nth-child(3) > div > label:nth-child(2):before {
     content: "□";
 }
 
-body > div > div > div:nth-child(3) label:nth-child(3):before {
+body > div > div > div:nth-child(3) > div > label:nth-child(3):before {
     content: "⨯";
 }
 
-body > div > div > div:nth-child(3) label:last-child:before {
+body > div > div > div:nth-child(3) > div > label:last-child:before {
     content: "○";
+}
+
+/* grid analog-side */
+body > div > div > div:nth-child(3) > div:first-child {
+    background: red;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    height: 100%;
+    width: 100%;
+}
+
+/* TODO: position analog buttons */
+body > div > div > div:nth-child(3) > div:nth-child(2) {
+    /* circle around the analog-pad */
+    /* ! TURN THIS BACK ON */
+    /* border: 1.5px solid black;
+    border-radius: 100%; */
+    /* ! the problem is more so that the buttons arent centered in their little grid boxes. */
+    background: blue;
+    height: 100%;
+    width: 70%;
+    margin-inline: auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+
+    /* TODO: fix buttons need to overlap circle, add padding to edges for this effect.*/
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+body > div > div > div:nth-child(3) > div:last-child {
+    background: yellow;
+    height: 100%;
+    width: 100%;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 3;
+}
+
+/* position individual buttons */
+body > div > div > div:nth-child(3) > div > label:first-child {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+}
+
+body > div > div > div:nth-child(3) > div > label:nth-child(2) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+}
+
+body > div > div > div:nth-child(3) > div > label:nth-child(3) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 3;
+}
+
+body > div > div > div:nth-child(3) > div > label:last-child {
+    grid-column-start: 3;
+    grid-column-end: 3;
+    grid-row-start: 2;
 }
 
 /* functionality analog-side */
 /* TODO: add styling for pressed button */
 /* TODO: if power on checkbox checked, change screen styling: work with one element, no classes ofc.  */
-/* body > div > div > div:nth-child(3):has(input:checked) label:before {
-} */
+body > div > div > div:nth-child(3):has(input:checked) label:before {
+    background-color: rebeccapurple;
+}
