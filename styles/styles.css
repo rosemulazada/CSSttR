@@ -28,6 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: grey;
 }
 
 /*======================
@@ -159,7 +160,6 @@ body > div > div > div:first-child > div:nth-child(2) {
         transform: rotate(90deg);
     }
 
-    /* why did i not know you could apply clip-paths to input fields..? :).. */
     label::before {
         content: "△";
         color: white;
@@ -409,7 +409,8 @@ body
 }
 
 /* turn screen on if powerbutton checked */
-body:has(label:first-child > input:checked) div[data-element="screen"] {
+body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
+    div[data-element="screen"] {
     background: linear-gradient(
         135deg,
         rgba(255, 255, 255, 0.246) 0%,
