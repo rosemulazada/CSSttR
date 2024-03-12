@@ -33,7 +33,12 @@ body {
 /*======================
  *      CODE START
  *======================*/
-/* ! todays goal: make the power button, then be able to turn the screen on */
+/* ! Apply nesting */
+/* ! Apply one other requirement */
+/* ! Create a FITTING title */
+
+/* ! TODAYS TASK: */
+/* TODO: Create the D-PAD on the other side */
 
 body > div {
     position: relative;
@@ -59,6 +64,11 @@ body > div > div > div:first-child {
     grid-row-start: 3;
     grid-column-start: 1;
     grid-column-end: 1;
+
+    /* grid for the D-PAD main element */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 0.5fr 1fr 0.65fr;
 }
 
 /* the screen */
@@ -100,6 +110,36 @@ body > div > div > div:last-child {
 
 /* styling for inputs on the LEFT: D-PAD */
 /* TODO: the above */
+body > div > div > div:first-child > div:nth-child(2) {
+    background: red;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+
+    /* ! TURN THIS BACK ON */
+    border: 1.5px solid black;
+    border-radius: 100%;
+    /* background: blue; */
+    height: 100%;
+    width: 70%;
+    margin-inline: auto;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    grid-row-start: 2;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    /* why did i not know you could apply clip-paths to input fields..? :).. */
+    input {
+        content: "";
+        clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        height: 20px;
+        width: 20px;
+        background: blue;
+    }
+}
 
 /* styling for inputs on the RIGHT: ANALOG */
 label {
@@ -110,8 +150,6 @@ label {
 /* ! THEN ADD THE BORDER CIRCLE AS A :BEFORE THATS POSITIONED ABSOLUTELY TO THE DIV ALL THE BUTTONS ARE IN: SIZE THIS HOW YOU WANT */
 input,
 label {
-    /* display: inline-block; */
-    /* margin: 5px; */
     cursor: pointer;
 }
 
@@ -130,8 +168,6 @@ body > div > div > div:nth-child(3) > div:nth-child(2) > label:before {
     /* TODO: make sure this width scales */
     width: 35px;
     height: 35px;
-    /* padding: 5px 10px; */
-    /* margin-right: 10px; */
     text-align: center;
     border-radius: 100%;
     /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
@@ -145,7 +181,6 @@ body > div > div > div:nth-child(3) > div:nth-child(2) > label:before {
 /* set icon */
 /* TODO: scale 'content' */
 /* TODO: make button appear pressed */
-/* ?: does the current default styling look more pressed..? */
 body
     > div
     > div
@@ -297,11 +332,20 @@ body > div > div > div:nth-child(3) > div > label:last-child {
 /* functionality analog-side */
 /* TODO: add styling for pressed button */
 /* TODO: if power on checkbox checked, change screen styling: work with one element, no classes ofc.  */
+body > div > div > div:nth-child(3) > div:last-child > label {
+    width: max-content;
+}
+body > div > div > div:nth-child(3) > div:last-child > label > input {
+    width: 5px;
+    height: 5px;
+}
+
 /* press power on */
 body > div > div > div:nth-child(3) > div:last-child > label > input:checked {
     background-color: rgb(0, 255, 0);
 }
 
+/* TODO: should toggle animation so it doesnt stay orange */
 body
     > div
     > div
@@ -314,7 +358,14 @@ body
 
 /* turn screen on if powerbutton checked */
 body:has(label:first-child > input:checked) div[data-element="screen"] {
-    display: none;
+    background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.246) 0%,
+        rgb(255, 255, 255) 25%,
+        rgb(178, 178, 178) 50%,
+        rgb(255, 255, 255) 75%,
+        rgba(255, 255, 255, 0.246) 100%
+    );
 }
 
 body
