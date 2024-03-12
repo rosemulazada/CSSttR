@@ -60,7 +60,6 @@ body > div > div {
 }
 
 body > div > div > div:first-child {
-    /* border: red 2px solid; */
     grid-row-start: 3;
     grid-column-start: 1;
     grid-column-end: 1;
@@ -74,7 +73,6 @@ body > div > div > div:first-child {
 /* the screen */
 /* TODO: add 'borders' styling for depth using box-shadow */
 body > div > div > div:nth-child(2) {
-    /* border: blue 2px solid; */
     grid-row-start: 2;
     grid-row-end: 4;
     grid-column-start: 2;
@@ -91,7 +89,6 @@ body > div > div > div:nth-child(2) {
 }
 
 body > div > div > div:nth-child(3) {
-    /* border: green 2px solid; */
     grid-row-start: 3;
     grid-column-start: 3;
     grid-column-end: 3;
@@ -108,18 +105,17 @@ body > div > div > div:last-child {
     grid-column-start: 2;
 }
 
-/* styling for inputs on the LEFT: D-PAD */
-/* TODO: the above */
+/*======================
+ *        D-PAD
+ *======================*/
+/* TODO: style the D-PAD */
 body > div > div > div:first-child > div:nth-child(2) {
-    background: rgba(25, 0, 255, 0.119);
     grid-column-start: 1;
     grid-column-end: 4;
     grid-row-start: 2;
 
-    /* ! TURN THIS BACK ON */
     border: 1.5px solid black;
     border-radius: 100%;
-    /* background: blue; */
     height: 100%;
     width: 70%;
     margin-inline: auto;
@@ -142,7 +138,6 @@ body > div > div > div:first-child > div:nth-child(2) {
         grid-column-end: 2;
         grid-row-start: 2;
         transform: rotate(270deg);
-
     }
 
     label:nth-child(3) {
@@ -179,7 +174,9 @@ body > div > div > div:first-child > div:nth-child(2) {
     }
 }
 
-/* styling for inputs on the RIGHT: ANALOG */
+/*======================
+ *        ANALOG
+ *======================*/
 label {
     position: relative;
     align-self: center;
@@ -269,8 +266,8 @@ body > div > div > div:nth-child(3) > div:first-child {
 body > div > div > div:nth-child(3) > div:nth-child(2) {
     /* circle around the analog-pad */
     /* ! TURN THIS BACK ON */
-    /* border: 1.5px solid black;
-    border-radius: 100%; */
+    border: 1.5px solid black;
+    border-radius: 100%;
     /* background: blue; */
     /* height: 100%;
     width: 70%; */
@@ -425,3 +422,6 @@ body
     label:before {
     background-color: rebeccapurple;
 }
+
+/* TODO: The game itself. */
+/* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
