@@ -29,7 +29,7 @@ The point of this class is that JavaScript is illegal to use; you should rely so
 
 The requirement for 3. and 4. was to solve a math equation handed out by the teacher Sanne 't Hooft, and while I gave my best shot at one just for funs sake to see if I could do it, I didn't and didn't expect to get far. So I've stuck it to 1 or 2.
 
-I liked both a lot, but when I started exploring the possibilities of what I could make for the modular control panel I became excited about the idea of making a game device from my youth in pure CSS. The Nintendo (3)DS was taken at the time and I didn't want to do what someone else was doing, and besides, I hold a special value in my heart for the PSP, so it came to me naturally. This is what I've decided to make for this assingment.
+I liked both a lot, but when I started exploring the possibilities of what I could make for the modular control panel I became excited about the idea of making a game device from my youth in pure CSS. The Nintendo (3)DS was taken at the time and I didn't want to do what someone else was doing, and besides, I hold a special value in my heart for the PSP, so it came to me naturally. This is what I've decided to make for this assignment.
 
 ## Installation
 
@@ -99,6 +99,13 @@ I ended up starting over on this day because my layout was unclear and my code w
 
 -   Set up the grid for the four analog buttons on the right
 -   Positioned power/hold buttons. When you click on the power button, it lights up green, and the hold button light turns orange. For now, it also makes the screen get a `display: none;` which of course is not what we want but it's just to illustrate that I can make something happen when you turn the screen on: and this can be toggled, meaning you can turn the PSP off and on.
+
+### CSSttR V0.3.0
+
+**March 12th**
+
+-   Set up the grid for the four D-PAD buttons on the right
+-   I styled the D-PAD to resemble their buttons on the original device.
 
 TBA.
 
