@@ -113,3 +113,4 @@ TBA.
 
 1. ['Pressed button' styling (used for default state)](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css)
 2. [Display: grid explained by CSS-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
+3. [Clippy: used to make the d-pad clip-path](https://bennettfeely.com/clippy/)
