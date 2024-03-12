@@ -127,6 +127,11 @@ body > div > div > div:first-child > div:nth-child(2) {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 
+    label {
+        width: 100%;
+        height: 100%;
+    }
+
     label:first-child {
         grid-column-start: 2;
         grid-column-end: 3;
@@ -161,16 +166,16 @@ body > div > div > div:first-child > div:nth-child(2) {
         display: inline-block;
         vertical-align: middle;
         /* TODO: make sure this width scales */
-        width: 35px;
-        height: 35px;
+        width: 100%;
+        height: 100%;
         text-align: center;
-        border-radius: 100%;
         /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
         background-color: var(--psp-foreground);
+        clip-path: polygon(0 0, 100% 0%, 100% 75%, 50% 100%, 0 75%);
         outline: none;
-        -webkit-box-shadow: inset 0px 0px 5px var(--button-shading);
-        -moz-box-shadow: inset 0px 0px 5px var(--button-shading);
-        box-shadow: inset 0px 0px 5px var(--button-shading);
+        -webkit-box-shadow: inset 0px 0px 10px var(--button-shading);
+        -moz-box-shadow: inset 0px 0px 10px var(--button-shading);
+        box-shadow: inset 0px 0px 10px var(--button-shading);
     }
 }
 
@@ -389,7 +394,18 @@ body
     > div:last-child:has(label:first-child > input:checked)
     label:last-child
     input {
-    background-color: rgb(255, 166, 0);
+    animation: hold 3s forwards;
+}
+
+/* TODO: time this with the screen coming  */
+@keyframes hold {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: rgb(255, 166, 0);
+    }
 }
 
 /* turn screen on if powerbutton checked */
