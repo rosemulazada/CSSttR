@@ -34,76 +34,77 @@ body {
 /*======================
  *      CODE START
  *======================*/
-/* ! Apply nesting */
+/* TODO: apply grid to rest */
 /* ! Apply one other requirement */
 /* ! Create a FITTING title */
 
-/* ! TODAYS TASK: */
-/* TODO: Create the D-PAD on the other side */
+body {
+    > div {
+        position: relative;
 
-body > div {
-    position: relative;
-}
+        > img[src="./assets/svgs/psp-foreground.svg"] {
+            width: 100%;
+            height: 100%;
+        }
 
-body > div > img[src="./assets/svgs/psp-foreground.svg"] {
-    width: 100%;
-    height: 100%;
-}
+        /* div that holds the main grid */
+        > div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            display: grid;
+            grid-template-columns: 0.355fr 1fr 0.355fr;
+            grid-template-rows: 0.06897fr 0.03448fr 1fr 0.15fr 0.03448fr;
 
-/* div that holds the main grid */
-body > div > div {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 0.355fr 1fr 0.355fr;
-    grid-template-rows: 0.06897fr 0.03448fr 1fr 0.15fr 0.03448fr;
-}
+            /* d-pad */
+            > div:first-child {
+                grid-row-start: 3;
+                grid-column-start: 1;
+                grid-column-end: 1;
 
-body > div > div > div:first-child {
-    grid-row-start: 3;
-    grid-column-start: 1;
-    grid-column-end: 1;
+                /* grid for the D-PAD main element */
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 0.5fr 1fr 0.65fr;
+            }
 
-    /* grid for the D-PAD main element */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.5fr 1fr 0.65fr;
-}
+            /* the screen */
+            /* TODO: add 'borders' styling for depth using box-shadow */
+            > div:nth-child(2) {
+                grid-row-start: 2;
+                grid-row-end: 4;
+                grid-column-start: 2;
+                grid-column-end: 3;
 
-/* the screen */
-/* TODO: add 'borders' styling for depth using box-shadow */
-body > div > div > div:nth-child(2) {
-    grid-row-start: 2;
-    grid-row-end: 4;
-    grid-column-start: 2;
-    grid-column-end: 3;
+                background: linear-gradient(
+                    135deg,
+                    rgba(255, 255, 255, 0.246) 0%,
+                    black 25%,
+                    rgba(255, 255, 255, 0.093) 50%,
+                    black 75%,
+                    rgba(255, 255, 255, 0.246) 100%
+                );
+            }
 
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.246) 0%,
-        black 25%,
-        rgba(255, 255, 255, 0.093) 50%,
-        black 75%,
-        rgba(255, 255, 255, 0.246) 100%
-    );
-}
+            /* analog-side */
+            > div:nth-child(3) {
+                grid-row-start: 3;
+                grid-column-start: 3;
+                grid-column-end: 3;
 
-body > div > div > div:nth-child(3) {
-    grid-row-start: 3;
-    grid-column-start: 3;
-    grid-column-end: 3;
+                /* position analog side main elements */
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: 0.5fr 1fr 0.65fr;
+            }
 
-    /* position analog side main elements */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 0.5fr 1fr 0.65fr;
-}
-
-body > div > div > div:last-child {
-    /* border: yellow 2px solid; */
-    grid-row-start: 4;
-    grid-column-start: 2;
+            /* bottom bar */
+            > div:last-child {
+                grid-row-start: 4;
+                grid-column-start: 2;
+            }
+        }
+    }
 }
 
 /*======================
@@ -187,12 +188,12 @@ label {
     align-self: center;
     justify-self: center;
 }
-/* ! THEN ADD THE BORDER CIRCLE AS A :BEFORE THATS POSITIONED ABSOLUTELY TO THE DIV ALL THE BUTTONS ARE IN: SIZE THIS HOW YOU WANT */
 input,
 label {
     cursor: pointer;
 }
 
+/* general styling for d-pad inputs and analog inputs */
 body > div > div > div:nth-child(3) > div:nth-child(2) > label > input,
 body > div > div > div:first-child > div:nth-child(2) > label > input {
     opacity: 0;
@@ -202,172 +203,150 @@ body > div > div > div:first-child > div:nth-child(2) > label > input {
     transform: scale(1.8);
 }
 
-body > div > div > div:nth-child(3) > div:nth-child(2) > label:before {
-    color: white;
-    display: inline-block;
-    vertical-align: middle;
-    /* TODO: make sure this width scales */
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    border-radius: 100%;
-    /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
-    background-color: var(--psp-foreground);
-    outline: none;
-    -webkit-box-shadow: inset 0px 0px 5px var(--button-shading);
-    -moz-box-shadow: inset 0px 0px 5px var(--button-shading);
-    box-shadow: inset 0px 0px 5px var(--button-shading);
-}
+/* grid for the entire analog side */
+body > div > div > div:nth-child(3) {
+    > div:first-child {
+        grid-column-start: 1;
+        grid-column-end: 4;
+        height: 100%;
+        width: 100%;
+    }
 
-/* set icon */
-/* TODO: scale 'content' */
-/* TODO: make button appear pressed */
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:nth-child(2)
-    > label:first-child:before {
-    content: "△";
-}
+    > div:nth-child(2) {
+        /* circle around the analog-pad */
+        border: 1.5px solid black;
+        border-radius: 100%;
+        margin-inline: auto;
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 2;
 
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:nth-child(2)
-    > label:nth-child(2):before {
-    content: "□";
-}
+        /* TODO: fix buttons need to overlap circle, add padding to edges for this effect.*/
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
 
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:nth-child(2)
-    > label:nth-child(3):before {
-    content: "⨯";
-}
+        label {
+            &:before {
+                color: white;
+                display: inline-block;
+                vertical-align: middle;
+                /* TODO: make sure this width scales */
+                width: 35px;
+                height: 35px;
+                text-align: center;
+                border-radius: 100%;
+                /* source for button styling: https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css */
+                background-color: var(--psp-foreground);
+                outline: none;
+                -webkit-box-shadow: inset 0px 0px 5px var(--button-shading);
+                -moz-box-shadow: inset 0px 0px 5px var(--button-shading);
+                box-shadow: inset 0px 0px 5px var(--button-shading);
+            }
 
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:nth-child(2)
-    > label:last-child:before {
-    content: "○";
-}
+            /* set icon */
+            /* TODO: scale 'content' */
+            /* TODO: make button appear pressed */
+            &:first-child:before {
+                content: "△";
+            }
 
-/* grid analog-side */
-body > div > div > div:nth-child(3) > div:first-child {
-    /* background: red; */
-    grid-column-start: 1;
-    grid-column-end: 4;
-    height: 100%;
-    width: 100%;
-}
+            &:nth-child(2):before {
+                content: "□";
+            }
 
-/* TODO: position analog buttons */
-body > div > div > div:nth-child(3) > div:nth-child(2) {
-    /* circle around the analog-pad */
-    /* ! TURN THIS BACK ON */
-    border: 1.5px solid black;
-    border-radius: 100%;
-    /* background: blue; */
-    /* height: 100%;
-    width: 70%; */
-    margin-inline: auto;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 2;
+            &:nth-child(3):before {
+                content: "⨯";
+            }
 
-    /* TODO: fix buttons need to overlap circle, add padding to edges for this effect.*/
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-}
+            &:last-child:before {
+                content: "○";
+            }
 
-body > div > div > div:nth-child(3) > div:last-child {
-    /* background: rgba(255, 255, 0, 0.423); */
-    height: 100%;
-    width: 100%;
+            /* position individual buttons */
+            &:first-child {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+            }
 
-    /* grid for power/hold */
-    display: grid;
-    grid-template-rows: 0.35fr 1fr 1fr 0.35fr;
-    grid-template-columns: 1.25fr 1fr 0.25fr;
+            &:nth-child(2) {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+            }
 
-    grid-column-start: 1;
-    grid-column-end: 4;
-    grid-row-start: 3;
-}
+            &:nth-child(3) {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+            }
 
-/* styling for the power/hold buttons */
-body > div > div > div:nth-child(3) > div:last-child > label {
-    font-family: Arial, sans-serif;
-    display: block;
-    text-transform: uppercase;
-    font-size: 0.6em;
-    color: var(--text-color);
-}
+            &:last-child {
+                grid-column-start: 3;
+                grid-column-end: 3;
+                grid-row-start: 2;
+            }
+        }
+    }
 
-body > div > div > div:nth-child(3) > div:last-child > label:first-of-type {
-    /* background: red; */
-    align-self: start;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    width: 100%;
-}
+    /* styling for the power/hold buttons */
+    > div:last-child {
+        height: 100%;
+        width: 100%;
 
-body > div > div > div:nth-child(3) > div:last-child > label:last-of-type {
-    /* background: blue; */
-    align-self: end;
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-    grid-row-end: 4;
-    width: 100%;
-}
+        /* grid for power/hold */
+        display: grid;
+        grid-template-rows: 0.35fr 1fr 1fr 0.35fr;
+        grid-template-columns: 1.25fr 1fr 0.25fr;
 
-/* some padding next to the label */
-body > div > div > div:nth-child(3) > div:last-child > label > input {
-    margin-left: 0.4em;
-    filter: blur(2px);
-    width: 1em;
-    height: 1em;
-    vertical-align: middle;
-    background-color: white;
-    border-radius: 100%;
-    appearance: unset;
-    -webkit-appearance: unset;
-    cursor: pointer;
-}
+        grid-column-start: 1;
+        grid-column-end: 4;
+        grid-row-start: 3;
 
-/* position individual buttons */
-body > div > div > div:nth-child(3) > div > label:first-child {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-}
+        > label {
+            font-family: Arial, sans-serif;
+            display: block;
+            text-transform: uppercase;
+            font-size: 0.6em;
+            color: var(--text-color);
 
-body > div > div > div:nth-child(3) > div > label:nth-child(2) {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-}
+            /* power button */
+            &:first-of-type {
+                align-self: start;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end: 3;
+                width: 100%;
+            }
 
-body > div > div > div:nth-child(3) > div > label:nth-child(3) {
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 3;
-}
+            /* hold button */
+            &:last-of-type {
+                /* background: blue; */
+                align-self: end;
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end: 4;
+                width: 100%;
+            }
 
-body > div > div > div:nth-child(3) > div > label:last-child {
-    grid-column-start: 3;
-    grid-column-end: 3;
-    grid-row-start: 2;
+            /* some padding next to the label and the blur styling*/
+            input {
+                margin-left: 0.4em;
+                filter: blur(2px);
+                width: 1em;
+                height: 1em;
+                vertical-align: middle;
+                background-color: white;
+                border-radius: 100%;
+                appearance: unset;
+                -webkit-appearance: unset;
+                cursor: pointer;
+            }
+        }
+    }
 }
 
 /* functionality analog-side */
@@ -442,3 +421,32 @@ body
 
 /* TODO: The game itself. */
 /* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
+
+@keyframes screen {
+    0% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            black 25%,
+            rgba(255, 255, 255, 0.093) 50%,
+            black 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    100% {
+        background: red;
+    }
+}
+
+/* this is the condition for any of the animations to occur */
+body
+    > div
+    > div
+    div:nth-child(3)
+    div:nth-child(3)
+    > label:first-child:has(input:checked) {
+    /* nest within this */
+}
+
+/* @container (width >= 703); */
