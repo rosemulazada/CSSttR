@@ -23,20 +23,35 @@ html {
     --text-color: #fff;
 }
 
+@font-face {
+    font-family: "Pixelify Sans";
+    src: url("../assets/fonts/PixelifySans-VariableFont_wght.ttf")
+        format("truetype");
+}
+
 body {
     min-height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: grey;
+    font-family: "Pixelify Sans", sans-serif;
 }
 
 /*======================
  *      CODE START
  *======================*/
+
 /* TODO: apply grid to rest */
 /* ! Apply one other requirement */
 /* ! Create a FITTING title */
+
+/* responsive */
+@container test (max-width <= 695) {
+    body > div:first-child {
+        background: red;
+    }
+}
 
 body {
     > div {
@@ -84,6 +99,12 @@ body {
                     black 75%,
                     rgba(255, 255, 255, 0.246) 100%
                 );
+
+                h1 {
+                    color: transparent;
+                    text-align: center;
+                    font-size: clamp(0.75em, 2em, 2em);
+                }
             }
 
             /* analog-side */
@@ -398,6 +419,10 @@ body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
         rgb(255, 255, 255) 75%,
         rgba(255, 255, 255, 0.246) 100%
     );
+
+    h1 {
+        animation: title 5s ease;
+    }
 }
 
 body
@@ -440,13 +465,55 @@ body
 }
 
 /* this is the condition for any of the animations to occur */
-body
-    > div
-    > div
-    div:nth-child(3)
-    div:nth-child(3)
-    > label:first-child:has(input:checked) {
-    /* nest within this */
-}
+
 
 /* @container (width >= 703); */
+
+/* h1 {
+    animation: title 5s ease;
+} */
+
+/**======================
+ *      ANIMATIONS
+ *========================**/
+@keyframes title {
+    0% {
+        color: transparent;
+        text-shadow: none;
+    }
+
+    70% {
+        color: white;
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0em blue;
+    }
+
+    80% {
+        color: transparent;
+        text-shadow: none;
+    }
+
+    90% {
+        color: white;
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0em blue;
+    }
+
+    97% {
+        color: transparent;
+        text-shadow: none;
+    }
+
+    98% {
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0em blue;
+        color: white;
+    }
+
+    99% {
+        color: transparent;
+        text-shadow: none;
+    }
+
+    100% {
+        text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0em blue;
+        color: white;
+    }
+}
