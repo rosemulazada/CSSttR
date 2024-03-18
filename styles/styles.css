@@ -411,15 +411,8 @@ body
 /* turn screen on if powerbutton checked */
 body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
     div[data-element="screen"] {
-    background: linear-gradient(
-        135deg,
-        rgba(255, 255, 255, 0.246) 0%,
-        rgb(255, 255, 255) 25%,
-        rgb(178, 178, 178) 50%,
-        rgb(255, 255, 255) 75%,
-        rgba(255, 255, 255, 0.246) 100%
-    );
-
+    animation: screen 5s ease;
+    background: blue;
     h1 {
         animation: title 5s ease;
     }
@@ -447,25 +440,7 @@ body
 /* TODO: The game itself. */
 /* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
 
-@keyframes screen {
-    0% {
-        background: linear-gradient(
-            135deg,
-            rgba(255, 255, 255, 0.246) 0%,
-            black 25%,
-            rgba(255, 255, 255, 0.093) 50%,
-            black 75%,
-            rgba(255, 255, 255, 0.246) 100%
-        );
-    }
-
-    100% {
-        background: red;
-    }
-}
-
 /* this is the condition for any of the animations to occur */
-
 
 /* @container (width >= 703); */
 
@@ -515,5 +490,74 @@ body
     100% {
         text-shadow: 1px 1px 2px red, 0 0 1em blue, 0 0 0em blue;
         color: white;
+    }
+}
+
+@keyframes screen {
+    0% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            black 25%,
+            rgba(255, 255, 255, 0.093) 50%,
+            black 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    10% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            rgb(255, 255, 255) 25%,
+            rgb(178, 178, 178) 50%,
+            rgb(255, 255, 255) 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    90% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            rgb(255, 255, 255) 25%,
+            rgb(178, 178, 178) 50%,
+            rgb(255, 255, 255) 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    97% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            black 25%,
+            rgba(255, 255, 255, 0.093) 50%,
+            black 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    98% {
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            rgb(255, 255, 255) 25%,
+            rgb(178, 178, 178) 50%,
+            rgb(255, 255, 255) 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
+    }
+
+    100% {
+        /* background: red; */
+        background: linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.246) 0%,
+            black 25%,
+            rgba(255, 255, 255, 0.093) 50%,
+            black 75%,
+            rgba(255, 255, 255, 0.246) 100%
+        );
     }
 }
