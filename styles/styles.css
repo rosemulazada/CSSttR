@@ -459,14 +459,19 @@ body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
 
     [data-element="mario-walking"] {
         display: block;
-        animation: mario-fadein-intro 5s ease;
+        animation: mario-fadein-intro, mario-walkin-intro;
+        animation-duration: 5s, 6s;
+        animation-timing-function: ease-in, ease-in;
+        animation-delay: 0s, 5s;
+        animation-fill-mode: forwards, forwards;
+        /* animation: mario-fadein-intro 5s ease, mario-walkin-intro 5s 5s ease; */
         background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
         background-size: cover;
         background-repeat: no-repeat;
         width: 2em;
         height: 2em;
         position: absolute;
-        top: 0;
+        bottom: 1.5em;
         left: 0;
     }
 }
@@ -635,6 +640,34 @@ body
 
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes mario-walkin-intro {
+    0% {
+    }
+
+    85% {
+        transform: translateX(25cqw);
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
+    }
+
+    90% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
+    }
+
+    95% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
+        transform: translate(25cqw, -2em);
+
+        transition: cubic-bezier(0.17, 0.67, 0.67, 0.46);
+    }
+
+    100% {
+        transform: translate(25cqw, 0);
+        transition: cubic-bezier(0.17, 0.67, 0.67, 0.46);
+
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
     }
 }
 
