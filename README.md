@@ -72,7 +72,7 @@ Every friday, we have a feedback session with four students total and the teache
 During this feedback session, I realised what I really wanted to do; I had quite a couple of ideas but hadn't gotten very far quite yet. I really only had my sketches and this README to guide me. I had two ideas:
 
 1. Cannibals and Missionaries: As mentioned before, the requirement for being allowed to do the third and fourth project was to solve a math question handed out by Sanne. Now, I didn't really have an intent of doing either one of these, but I thought I'd give one a shot just to see how far I could get, just as most others in the class. Sanne suggested to me that I make this as my project for the class.. which I was actually very enthusiastic about, but as I started to map out in sketches and notes whether this was feasible, I found that it was too complicated to add that logic into a CSS game; or maybe there was something I had not thought of.
-2. The Modular Device: Inspired by my teammates and others I had spoken on their ideas, I decided I would make a PSP. Not much was known yet at this point, except that I wanted to try to experiment with `:has()` and possibly calculating with `n,` but the latter only if my project required it as it didn't seem to be very suitable; there were simpler ways to achieve my goals.
+2. The Modular Device: Inspired by my teammates and others I had spoken on their ideas, I decided I would make a PSP. Not much was known yet at this point, except that I wanted to try to experiment with `:has()` and possibly calculating with `n`, but the latter only if my project required it as it didn't seem to be very suitable; there were simpler ways to achieve my goals.
 
 ### March 8th: The first intake
 
