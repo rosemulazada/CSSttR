@@ -55,8 +55,8 @@ The PSP has a few things to note.
 2. The buttons, which there are at least eight of excluding the power button.
 3. The screen.
 
-4. I tried to think a lot about how I could achieve the shape of the device but eventually decided to settle for a SVG I made because I didn't want to put too much valuable time into this over getting to the main layout and its functionality, as that by itself will take up a lot of time.
-   2/3. I struggled settling on what I wanted the buttons to do in relation to the screen. The screen needs to turn on, for one, but there is so much that the device could do. I thought of mapping through the PSP menu first, something I'm still kind of considering.. but there was also the option of making a mini Mario game where you can make him walk around, jump, pose, etcetera. Mario was never for the PSP, but this is CSS, so I've chosen not to care about that.. However, I'm still slightly on the fence about which one of these two options I'll choose. I think the Mario one allows for more of the buttons to be used, which might be a valuable reason to choose it over the menu, but I'll have to map this out and weigh out what I've got. For now, I just want to make sure I can get the layout right.
+1. I tried to think a lot about how I could achieve the shape of the device but eventually decided to settle for a SVG I made because I didn't want to put too much valuable time into this over getting to the main layout and its functionality, as that by itself will take up a lot of time.
+2/3. I struggled settling on what I wanted the buttons to do in relation to the screen. The screen needs to turn on, for one, but there is so much that the device could do. I thought of mapping through the PSP menu first, something I'm still kind of considering.. but there was also the option of making a mini Mario game where you can make him walk around, jump, pose, etcetera. Mario was never for the PSP, but this is CSS, so I've chosen not to care about that.. However, I'm still slightly on the fence about which one of these two options I'll choose. I think the Mario one allows for more of the buttons to be used, which might be a valuable reason to choose it over the menu, but I'll have to map this out and weigh out what I've got. For now, I just want to make sure I can get the layout right.
 
 ### CSS features I want to use
 
@@ -68,7 +68,13 @@ Every friday, we have a feedback session with four students total and the teache
 
 ### March 1st: Presenting our ideas
 
+During this feedback session, I realised what I really wanted to do; I had quite a couple of ideas but hadn't gotten very far quite yet. I really only had my sketches and this README to guide me. I had two ideas:
+
+1. Cannibals and Missionaries: As mentioned before, the requirement for being allowed to do the third and fourth project was to solve a math question handed out by Sanne. Now, I didn't really have an intent of doing either one of these, but I thought I'd give one a shot just to see how far I could get, just as most others in the class. Sanne suggested to me that I make this as my project for the class.. which I was actually very enthusiastic about, but as I started to map out in sketches and notes whether this was feasible, I found that it was too complicated to add that logic into a CSS game; or maybe there was something I had not thought of.
+2. The Modular Device: Inspired by my teammates and others I had spoken on their ideas, I decided I would make a PSP. Not much was known yet at this point, except that I wanted to try to experiment with `:has()` and possibly calculating with `n,` but the latter only if my project required it as it didn't seem to be very suitable; there were simpler ways to achieve my goals.
+
 ### March 8th: The first intake
+
 
 ### March 15th: TBA
 
