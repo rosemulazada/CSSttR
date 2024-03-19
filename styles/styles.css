@@ -31,7 +31,6 @@ html {
 
 body {
     min-height: 100%;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -61,7 +60,6 @@ body {
 
 /* ! Apply one other requirement */
 /* ! Create a FITTING title */
-/* ! ASK SANNE FOR RESPONSIVE DESIGN */
 /* TODO: also ask sanne about hover on z-index */
 
 /* responsive */
@@ -180,7 +178,6 @@ body {
 /*======================
  *        D-PAD
  *======================*/
-/* TODO: style the D-PAD */
 body > div > div > div:first-child > div:nth-child(2) {
     grid-column-start: 1;
     grid-column-end: 4;
@@ -236,7 +233,6 @@ body > div > div > div:first-child > div:nth-child(2) {
         color: white;
         display: inline-block;
         vertical-align: middle;
-        /* TODO: make sure this width scales */
         width: 100%;
         height: 100%;
         text-align: center;
@@ -321,7 +317,6 @@ body > div > div > div:nth-child(3) {
             }
 
             /* set icon */
-            /* TODO: scale 'content' */
             /* TODO: make button appear pressed */
             &:first-child:before {
                 content: "△";
@@ -428,7 +423,6 @@ body > div > div > div:nth-child(3) {
 
 /* functionality analog-side */
 /* TODO: add styling for pressed button */
-/* TODO: if power on checkbox checked, change screen styling: work with one element, no classes ofc.  */
 body > div > div > div:nth-child(3) > div:last-child > label {
     width: max-content;
 }
@@ -453,7 +447,6 @@ body
     animation: hold 3s forwards;
 }
 
-/* TODO: time this with the screen coming  */
 @keyframes hold {
     0% {
         background-color: white;
