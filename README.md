@@ -55,8 +55,7 @@ The PSP has a few things to note.
 
     I tried to think a lot about how I could achieve the shape of the device but eventually decided to settle for a SVG I made because I didn't want to put too much valuable time into this over getting to the main layout and its functionality, as that by itself will take up a lot of time.
 
-2. The buttons, which there are at least eight of excluding the power button.
-3. The screen.
+2. The buttons, which there are at least eight of excluding the power button, and the screen.
 
     I struggled settling on what I wanted the buttons to do in relation to the screen. The screen needs to turn on, for one, but there is so much that the device could do. I thought of mapping through the PSP menu first, something I'm still kind of considering.. but there was also the option of making a mini Mario game where you can make him walk around, jump, pose, etcetera. Mario was never for the PSP, but this is CSS, so I've chosen not to care about that.. However, I'm still slightly on the fence about which one of these two options I'll choose. I think the Mario one allows for more of the buttons to be used, which might be a valuable reason to choose it over the menu, but I'll have to map this out and weigh out what I've got. For now, I just want to make sure I can get the layout right.
 
