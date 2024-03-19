@@ -43,7 +43,7 @@ body {
  *======================*/
 
 /* popup styling */
-body > div[data-element="popup"] {
+body > div:last-of-type {
     position: absolute;
     display: none;
     z-index: 3;
@@ -52,24 +52,27 @@ body > div[data-element="popup"] {
     width: 100vw;
 }
 
-/* ! Apply one other requirement */
+body > div > div > div:nth-of-type(2) > div {
+    display: none;
+}
+
 /* ! Create a FITTING title */
 /* TODO: also ask sanne about hover on z-index */
 
 /* responsive */
 
 body {
-    div[data-element="popup"] {
+    > div:last-child {
         display: none;
     }
+
     > div {
         position: relative;
         display: block;
 
         /* !Dont forget to end up putting this in  the 'checked' thing so it only runs when the device is on*/
-        /* TODO: on hover, change style query for background: possible switch the version of mario..? OR: use style queries for the 'pressed' effect.*/
         /* TODO: have mario come walking in from the left of the screen. */
-        div[data-element="L"] {
+        > div:nth-of-type(2) {
             background: #ffffff6b;
             width: 6em;
             height: 2em;
@@ -84,7 +87,7 @@ body {
             }
         }
 
-        div[data-element="R"] {
+        > div:last-of-type {
             background: #ffffff6b;
             width: 6em;
             height: 2em;
@@ -99,6 +102,7 @@ body {
             }
         }
 
+        /* ? mag dit wel: img[src="./assets/svgs/psp-foreground.svg"]*/
         > img[src="./assets/svgs/psp-foreground.svg"] {
             width: 100%;
             height: 100%;
@@ -133,23 +137,22 @@ body {
                 grid-column-start: 2;
                 grid-column-end: 3;
 
-                background: linear-gradient(
-                    135deg,
-                    rgba(255, 255, 255, 0.246) 0%,
-                    black 25%,
-                    rgba(255, 255, 255, 0.093) 50%,
-                    black 75%,
-                    rgba(255, 255, 255, 0.246) 100%
+                background: var(
+                    --game-background,
+                    linear-gradient(
+                        135deg,
+                        rgba(255, 255, 255, 0.246) 0%,
+                        black 25%,
+                        rgba(255, 255, 255, 0.093) 50%,
+                        black 75%,
+                        rgba(255, 255, 255, 0.246) 100%
+                    )
                 );
 
                 h1 {
                     color: transparent;
                     text-align: center;
                     font-size: clamp(0.75em, 2em, 2em);
-                }
-
-                [data-element="mario-walking"] {
-                    display: none;
                 }
             }
 
@@ -447,19 +450,33 @@ body
 }
 
 /* turn screen on if powerbutton checked */
-body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
-    div[data-element="screen"] {
-    animation: screen 5s ease;
-    background-image: url(../assets/images/super-mario-bros-3/background.png);
-    position: relative;
+body > div > div {
+    container-name: wrapper;
+}
 
-    h1 {
-        animation: title 5s;
+body
+    div
+    div:has(
+        div:nth-child(3) div:nth-child(3) label:first-child > input:checked
+    ) {
+    --on: true;
+}
+
+@container wrapper style(--on:true) {
+    body > div > div > div:nth-child(2) {
+        animation: screen 5s ease;
+        /* background-image: url(../assets/images/super-mario-bros-3/background.png); */
+        --game-background: url(../assets/images/super-mario-bros-3/background.png);
+        position: relative;
+
+        h1 {
+            animation: title 5s;
+        }
     }
-
-    [data-element="mario-walking"] {
+    body > div > div > div:nth-child(2) div {
+        /* --mario-display: */
         display: block;
-        animation: mario-fadein-intro, mario-walkin-intro;
+        animation-name: mario-fadein-intro, mario-walkin-intro;
         animation-duration: 5s, 6s;
         animation-timing-function: ease-in, ease-in;
         animation-delay: 0s, 5s;
@@ -473,6 +490,20 @@ body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
         position: absolute;
         bottom: 1.5em;
         left: 0;
+    }
+}
+
+body
+    div
+    div:has(
+        div:nth-child(3) div:nth-child(2) label:nth-of-type(3) > input:checked
+    ) {
+    --jump: true;
+}
+
+@container wrapper style(--on:true) and style(--jump:true) {
+    div:nth-of-type(2) div {
+        filter: brightness(20);
     }
 }
 
@@ -492,7 +523,7 @@ body
     > div:nth-child(3)
     > div:nth-child(2):has(input:checked)
     label:before {
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
 }
 
 /* TODO: The game itself. */
@@ -648,7 +679,7 @@ body
     }
 
     85% {
-        transform: translateX(25cqw);
+        transform: translateX(15vw);
         background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
     }
 
@@ -658,17 +689,35 @@ body
 
     95% {
         background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
-        transform: translate(25cqw, -2em);
+        transform: translate(15vw, -2em);
 
         transition: cubic-bezier(0.17, 0.67, 0.67, 0.46);
     }
 
     100% {
-        transform: translate(25cqw, 0);
+        transform: translate(15vw, 0);
         transition: cubic-bezier(0.17, 0.67, 0.67, 0.46);
 
-        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-front-facing.png);
     }
+}
+
+@keyframes mario-jump {
+    0% {
+        background: none;
+    }
+    100% {
+        background: red;
+    }
+}
+
+/**======================
+ *    STYLE QUERIES
+ *========================**/
+@container style(--input-state: unpressed) {
+}
+
+@container style(--input-state:pressed) {
 }
 
 /**======================
@@ -677,7 +726,7 @@ body
 @media only screen and (max-width: 710px) {
     /* mobile: turn phone to landscape-popup */
 
-    body div[data-element="popup"] {
+    body div:last-of-type {
         display: block;
     }
 
