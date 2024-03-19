@@ -42,6 +42,16 @@ body {
  *      CODE START
  *======================*/
 
+/* popup styling */
+body > div[data-element="popup"] {
+    position: absolute;
+    display: none;
+    z-index: 3;
+    background: white;
+    height: 100vh;
+    width: 100vw;
+}
+
 /* ! Apply one other requirement */
 /* ! Create a FITTING title */
 /* TODO: also ask sanne about hover on z-index */
@@ -54,6 +64,7 @@ body {
     }
     > div {
         position: relative;
+        display: block;
 
         /* !Dont forget to end up putting this in  the 'checked' thing so it only runs when the device is on*/
         /* TODO: on hover, change style query for background: possible switch the version of mario..? OR: use style queries for the 'pressed' effect.*/
@@ -598,16 +609,14 @@ body
 /* media queries */
 @media only screen and (max-width: 710px) {
     /* mobile: turn phone to landscape-popup */
-    body > div[data-element="popup"] {
-        position: absolute;
+
+    body div[data-element="popup"] {
         display: block;
-        z-index: 3;
-        background: white;
-        height: 100vh;
-        width: 100vw;
     }
 
-    body > div:first-child {
-        display: none;
+    body {
+        div {
+            display: none;
+        }
     }
 }
