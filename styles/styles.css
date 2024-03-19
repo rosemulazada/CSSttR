@@ -147,6 +147,10 @@ body {
                     text-align: center;
                     font-size: clamp(0.75em, 2em, 2em);
                 }
+
+                [data-element="mario-walking"] {
+                    display: none;
+                }
             }
 
             /* analog-side */
@@ -442,24 +446,28 @@ body
     animation: hold 3s forwards;
 }
 
-@keyframes hold {
-    0% {
-        background-color: white;
-    }
-
-    100% {
-        background-color: rgb(255, 166, 0);
-    }
-}
-
 /* turn screen on if powerbutton checked */
 body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
     div[data-element="screen"] {
     animation: screen 5s ease;
     background-image: url(../assets/images/super-mario-bros-3/background.png);
+    position: relative;
 
     h1 {
-        animation: title 5s ease;
+        animation: title 5s;
+    }
+
+    [data-element="mario-walking"] {
+        display: block;
+        animation: mario-fadein-intro 5s ease;
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 2em;
+        height: 2em;
+        position: absolute;
+        top: 0;
+        left: 0;
     }
 }
 
@@ -606,7 +614,33 @@ body
     }
 }
 
-/* media queries */
+@keyframes hold {
+    0% {
+        background-color: white;
+    }
+
+    100% {
+        background-color: rgb(255, 166, 0);
+    }
+}
+
+@keyframes mario-fadein-intro {
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/**======================
+ *      MEDIA-QUERY
+ *========================**/
 @media only screen and (max-width: 710px) {
     /* mobile: turn phone to landscape-popup */
 
