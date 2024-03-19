@@ -31,6 +31,7 @@ html {
 
 body {
     min-height: 100%;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -50,6 +51,9 @@ body {
 /* responsive */
 
 body {
+    div[data-element="popup"] {
+        display: none;
+    }
     > div {
         position: relative;
 
@@ -595,5 +599,22 @@ body
             black 75%,
             rgba(255, 255, 255, 0.246) 100%
         );
+    }
+}
+
+@media only screen and (max-width: 710px) {
+    /* mobile: turn phone to landscape-popup */
+
+    body > div[data-element="popup"] {
+        position: absolute;
+        display: block;
+        z-index: 3;
+        background: white;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    body > div:first-child {
+        display: none;
     }
 }
