@@ -44,48 +44,45 @@ body {
 
 /* ! Apply one other requirement */
 /* ! Create a FITTING title */
+/* ! ASK SANNE FOR RESPONSIVE DESIGN */
+/* TODO: also ask sanne about hover on z-index */
 
 /* responsive */
-@container test (max-width <= 695) {
-    body > div:first-child {
-        background: red;
-    }
-}
 
 body {
     > div {
         position: relative;
 
-        /* !Dont forget to end up putting this in  the 'checked' thing so it only runs when the device is on */
-        /* TODO: on hover, change style query for background. */
+        /* !Dont forget to end up putting this in  the 'checked' thing so it only runs when the device is on*/
+        /* TODO: on hover, change style query for background: possible switch the version of mario..? OR: use style queries for the 'pressed' effect.*/
         /* TODO: have mario come walking in from the left of the screen. */
         div[data-element="L"] {
-            background: blue;
-            width: 20px;
-            height: 20px;
+            background: #ffffff6b;
+            width: 6em;
+            height: 2em;
             top: 0;
-            left: 0;
+            left: 2.5em;
             position: absolute;
-            border-radius: 60%;
-            transition: 1s ease;
+            border-top-left-radius: 100%;
+            transition: 0.25s ease;
 
             &:hover {
-                background-color: red;
+                transform: translate(5px, 5px);
             }
         }
 
         div[data-element="R"] {
-            background: blue;
-            width: 20px;
-            height: 20px;
+            background: #ffffff6b;
+            width: 6em;
+            height: 2em;
             top: 0;
-            right: 0;
+            right: 2.5em;
             position: absolute;
-            border-radius: 60%;
-            transition: 1s ease;
+            border-top-right-radius: 100%;
+            transition: 0.25s ease;
 
             &:hover {
-                background-color: red;
+                transform: translate(-5px, 5px);
             }
         }
 
@@ -251,8 +248,8 @@ body > div > div > div:nth-child(3) > div:nth-child(2) > label > input,
 body > div > div > div:first-child > div:nth-child(2) > label > input {
     opacity: 0;
     position: absolute;
-    top: 7px;
-    left: 7px;
+    top: 0.5em;
+    left: 0.7em;
     transform: scale(1.8);
 }
 
@@ -308,6 +305,7 @@ body > div > div > div:nth-child(3) {
             /* TODO: make button appear pressed */
             &:first-child:before {
                 content: "△";
+                /* transform:scale(.5) ; */
             }
 
             &:nth-child(2):before {
@@ -450,7 +448,7 @@ body
 body:has(div:nth-child(3) div:nth-child(3) label:first-child > input:checked)
     div[data-element="screen"] {
     animation: screen 5s ease;
-    background-image: url(../assets/images/background.png);
+    background-image: url(../assets/images/super-mario-bros-3/background.png);
 
     h1 {
         animation: title 5s ease;
@@ -589,7 +587,6 @@ body
     }
 
     100% {
-        /* background: red; */
         background: linear-gradient(
             135deg,
             rgba(255, 255, 255, 0.246) 0%,
