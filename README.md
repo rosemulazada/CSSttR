@@ -76,6 +76,10 @@ During this feedback session, I realised what I really wanted to do; I had quite
 
 ### March 8th: The first intake
 
+At this point, I had looked more so into the logistics of how I wanted to achieve things. How did I want to style the grid? How did I want to style the buttons AND make sure they're capable of triggering a certain event? In terms of styling, I had the shape of the PSP laid out on the website and I had some checkboxes (I chose this specifically because I wanted multiple things to be possible to trigger at once), which I styled as PSP buttons. Listening to how my teammates were planning to achieve certain things, I got inspired and got nice suggestions on how to tackle things going into the first prototype. So I started tinkering. 
+
+NOTE: This was also the night where I started over again with my project. The code that I did have was messy to me and hard to have any view over. So I cleared everything and started again with a better plan in mind, going off of my notes from the feedback session from that day, I was able to make a decent starting point for a the layout, and could work a lot more easily considering I actually knew what was where, what did what, and why.
+
 ### March 15th: TBA
 
 TBA
