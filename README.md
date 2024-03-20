@@ -9,13 +9,10 @@ My repository for the final assignment for CSS to the Rescue, Web Design and Dev
 -   [My project](#my-project)
     -   [Before any code: what are my thoughts/plans?](#before-any-code-what-are-my-thoughtsplans)
     -   [CSS features I want to use](#css-features-i-want-to-use)
--   [Takeaway from feedback](#takeaway-from-feedback)
-    -   [March 1st: Presenting our ideas](#march-1st-presenting-our-ideas)
-    -   [March 8th: The first intake](#march-8th-the-first-intake)
-    -   [March 15th: TBA](#march-15th-tba)
--   [Usage and Features](#usage-and-features)
+-   [Takeaway from feedback](#takeaway-from-feedback) - [March 1st: Presenting our ideas](#march-1st-presenting-our-ideas) - [March 8th: The first intake](#march-8th-the-first-intake) - [March 15th: The final intake](#march-15th-the-final-intake)
+<!-- -   [Usage and Features](#usage-and-features) -->
 -   [Reflection](#Reflection)
--   [Version log](#versionchange-log)
+<!-- -   [Version log](#versionchange-log) -->
 -   [External Sources](#external-sources)
 
 ## Introduction to the assignment
@@ -59,6 +56,8 @@ The PSP has a few things to note.
 
     I struggled settling on what I wanted the buttons to do in relation to the screen. The screen needs to turn on, for one, but there is so much that the device could do. I thought of mapping through the PSP menu first, something I'm still kind of considering.. but there was also the option of making a mini Mario game where you can make him walk around, jump, pose, etcetera. Mario was never for the PSP, but this is CSS, so I've chosen not to care about that.. However, I'm still slightly on the fence about which one of these two options I'll choose. I think the Mario one allows for more of the buttons to be used, which might be a valuable reason to choose it over the menu, but I'll have to map this out and weigh out what I've got. For now, I just want to make sure I can get the layout right.
 
+I decided to achieve the shape with an `img` with a path to an svg for ease, and the buttons, I immediately was reminded of our lessons about `:has` with radio-buttons and checkboxes, so this is what I think I'll do to achieve those. I found a code exerpt online that styles radio buttons in a way I think could be useful for my page. Find this link below or [right here.](https://jsfiddle.net/RbH9N/78/)
+
 ### CSS features I want to use
 
 `:has()` is one that I'm fascinated by, and one that I know will be the feature every other student names too but it comes with good reason. It's like a little slice of JavaScript in CSS, which to me is fascinating and I'm excited to learn about what other possibilities will be implemented from `:has()` in the future. But I plan to use `:has(input:checked)` to toggle an animation on the PSP screen, when the input is checked: the input being the PSP buttons which I've styled.
@@ -76,23 +75,33 @@ During this feedback session, I realised what I really wanted to do; I had quite
 
 ### March 8th: The first intake
 
-At this point, I had looked more so into the logistics of how I wanted to achieve things. How did I want to style the grid? How did I want to style the buttons AND make sure they're capable of triggering a certain event? In terms of styling, I had the shape of the PSP laid out on the website and I had some checkboxes (I chose this specifically because I wanted multiple things to be possible to trigger at once), which I styled as PSP buttons. Listening to how my teammates were planning to achieve certain things, I got inspired and got nice suggestions on how to tackle things going into the first prototype. So I started tinkering. 
+At this point, I had looked more so into the logistics of how I wanted to achieve things. How did I want to style the grid? How did I want to style the buttons AND make sure they're capable of triggering a certain event? In terms of styling, I had the shape of the PSP laid out on the website and I had some checkboxes (I chose this specifically because I wanted multiple things to be possible to trigger at once), which I styled as PSP buttons. Listening to how my teammates were planning to achieve certain things, I got inspired and got nice suggestions on how to tackle things going into the first prototype. So I started tinkering.
 
 NOTE: This was also the night where I started over again with my project. The code that I did have was messy to me and hard to have any view over. So I cleared everything and started again with a better plan in mind, going off of my notes from the feedback session from that day, I was able to make a decent starting point for a the layout, and could work a lot more easily considering I actually knew what was where, what did what, and why.
 
-### March 15th: TBA
+### March 15th: The final intake
 
-TBA
+At this point, the styling was complete; the PSP lacked certain things like the 'Sony' logo and other such things like the LEFT/RIGHT buttons on the corners of the device, as well as the PSP logo itself.. but the buttons were there! This meant I could finally get started on actual functionality. I did not yet have these, but I did get a good source of inspiration from Sanne took a [CodePen by Jon Kantner](https://codepen.io/jkantner/pen/abOBdgV) and made a [more abstract version](https://codepen.io/shooft/pen/zYXvLoO) of it that was easier to follow. He suggested I use this for my D-PAD, to make Mario move left and right, something I found amazing and really wanted to do, so I kept this in the back of my mind.
 
-## Usage and Features
+**NOTE**: in actuality, I didn't manage to apply this: read why in [Reflection.](#reflection)
 
-TBA.
+<!-- ## Usage and Features
+
+TBA. -->
 
 ## Reflection
 
-TBA.
+Continuing on from [March 15th: The final intake](#march-15th-the-final-intake), it took me a lot of time to figure out how to stear the buttons and make them do what I wanted. This, and the fact that I had used _checkboxes_ instead of _buttons_ made it complicated to achieve. In hindsight I should have thought through more in depth what I wanted to do and how before choosing the elements for the D-PAD/ANALOG BUTTONS, but I was so focused on the concept of how to toggle code and we had learnt so much about using `:has()` on `input`s that I completely overlooked this and did not make it personal to my goals.
 
-## Version/Change log
+All in all, I learned a lot from this project. This was my first time using `display:grid;` so extensively and I instantly found myself using it more. I'm sure there are a lot more clever ways to apply it than how I've done it, but I can see myself learning a lot about it, and I really want to as well; it seems to me like a much more reliable cousin to `display:flex` which I had become so accustomed to using, and if we ignore the finnicking with specific calculations for the `fr`s, it saved me a lot of effort.
+
+Not to mention the things I learned about that I had no idea even existed. I knew of custom properties, I, however, did not know how extensively they could be used. Sanne uses them to structure his code a lot more nicely, to create properties like for example `--hue: 60;` where you only have to pass in a value and it updates the hue. Of course, I used them mostly for colors but also for style queries, something which is also new to me. It's like a way of making your own states in CSS, something which I had ruled out as completely impossible, but it is now; CSS is making advances and this class has opened my eyes up to the insane world of what is possible with it, or more importantly, **without JavaScript.**
+
+I cannot say this without mentioning `:has()` once again more explicitly. I keep up with new CSS trends as much as I can but I had not heard about this one, nor `:is()` or the apparent `:where()` which also exists?, until Sanne told us about it. _What a life changer._ Things thought to me impossible without JavaScript are now possible in CSS, and shockingly, they are possible with (in certain cases) much more concise code, less lines of it.
+
+There are things I would improve with this project, but such things exist everywhere. I'm proud of how much I learnt, because at the end of the day that was what this was; a project to learn and explore the boundaries of CSS with. And as far as that goes, I definitely succeeded. It helps that it looks pretty neat too, but even there I think there are things to improve; although that's something for a future project. I definitely will be revisiting CSS-only works more and keeping an eye peeled for future developments in the language.
+
+<!-- ## Version/Change log
 
 ### CSSttR V0.1.0
 
@@ -117,10 +126,13 @@ I ended up starting over on this day because my layout was unclear and my code w
 -   Set up the grid for the four D-PAD buttons on the right
 -   I styled the D-PAD to resemble their buttons on the original device.
 
-TBA.
+TBA. -->
 
 ## External Sources
 
 1. ['Pressed button' styling (used for default state)](https://stackoverflow.com/questions/38377062/how-to-make-html-button-look-pressed-in-using-css)
 2. [Display: grid explained by CSS-tricks](https://css-tricks.com/snippets/css/complete-guide-grid/)
 3. [Clippy: used to make the d-pad clip-path](https://bennettfeely.com/clippy/)
+4. [Style Queries explained on Chrome for Developers](https://developer.chrome.com/docs/css-ui/style-queries);
+5. [Source of the SONY logo](https://en.m.wikipedia.org/wiki/File:Sony_logo.svg)
+6. [Inspiration for how I put the symbols inside the buttons](https://jsfiddle.net/RbH9N/78/)
