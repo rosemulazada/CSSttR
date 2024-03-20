@@ -9,11 +9,14 @@ My repository for the final assignment for CSS to the Rescue, Web Design and Dev
 -   [My project](#my-project)
     -   [Before any code: what are my thoughts/plans?](#before-any-code-what-are-my-thoughtsplans)
     -   [CSS features I want to use](#css-features-i-want-to-use)
--   [Takeaway from feedback](#takeaway-from-feedback) - [March 1st: Presenting our ideas](#march-1st-presenting-our-ideas) - [March 8th: The first intake](#march-8th-the-first-intake) - [March 15th: The final intake](#march-15th-the-final-intake)
-<!-- -   [Usage and Features](#usage-and-features) -->
+-   [Takeaway from feedback](#takeaway-from-feedback)
+    -   [March 1st: Presenting our ideas](#march-1st-presenting-our-ideas)
+    -   [March 8th: The first intake](#march-8th-the-first-intake)
+    -   [March 15th: The final intake](#march-15th-the-final-intake)
 -   [Reflection](#Reflection)
-<!-- -   [Version log](#versionchange-log) -->
 -   [External Sources](#external-sources)
+    <!-- -   [Usage and Features](#usage-and-features) -->
+    <!-- -   [Version log](#versionchange-log) -->
 
 ## Introduction to the assignment
 
