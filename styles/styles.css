@@ -259,7 +259,7 @@ label {
 /* general styling for d-pad inputs and analog inputs */
 body > div > div > div:nth-child(3) > div:nth-child(2) > label > input,
 body > div > div > div:first-child > div:nth-child(2) > label > input {
-    /* opacity: 0; */
+    opacity: 0;
     position: absolute;
     top: 0.5em;
     left: 0.7em;
@@ -418,7 +418,13 @@ body > div > div > div:nth-child(3) {
     }
 }
 
-/* functionality analog-side */
+/* !=======================================================================================================================
+                                                   ! DO THE STATE FIRST
+ ! =======================================================================================================================**/
+
+/**======================
+ *     FUNCTIONALITY
+ *========================**/
 /* TODO: add styling for pressed button */
 body > div > div > div:nth-child(3) > div:last-child > label {
     width: max-content;
@@ -428,12 +434,8 @@ body > div > div > div:nth-child(3) > div:last-child > label > input {
     height: 5px;
 }
 
-/* press power on */
-
-/* TODO: The game itself. */
 /* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
 
-/* this is the condition for any of the animations to occur */
 body > div > div > div:nth-child(3) > div:last-child > label > input:checked {
     background-color: rgb(0, 255, 0);
 }
@@ -462,6 +464,7 @@ body
     animation: none;
 }
 
+/* this is the MAIN condition for any of the animations to occur */
 @container wrapper style(--on:true) {
     body > div > div > div:nth-child(2) {
         animation: screen 5s ease;
