@@ -59,8 +59,6 @@ body > div > div > div:nth-of-type(2) > div {
 /* ! Create a FITTING title */
 /* TODO: also ask sanne about hover on z-index */
 
-/* responsive */
-
 body {
     > div:last-child {
         display: none;
@@ -70,8 +68,6 @@ body {
         position: relative;
         display: block;
 
-        /* !Dont forget to end up putting this in  the 'checked' thing so it only runs when the device is on*/
-        /* TODO: have mario come walking in from the left of the screen. */
         > div:nth-of-type(2) {
             background: #ffffff6b;
             width: 6em;
@@ -102,8 +98,7 @@ body {
             }
         }
 
-        /* ? mag dit wel: img[src="./assets/svgs/psp-foreground.svg"]*/
-        > img[src="./assets/svgs/psp-foreground.svg"] {
+        > img {
             width: 100%;
             height: 100%;
         }
@@ -264,7 +259,7 @@ label {
 /* general styling for d-pad inputs and analog inputs */
 body > div > div > div:nth-child(3) > div:nth-child(2) > label > input,
 body > div > div > div:first-child > div:nth-child(2) > label > input {
-    opacity: 0;
+    /* opacity: 0; */
     position: absolute;
     top: 0.5em;
     left: 0.7em;
@@ -434,11 +429,15 @@ body > div > div > div:nth-child(3) > div:last-child > label > input {
 }
 
 /* press power on */
+
+/* TODO: The game itself. */
+/* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
+
+/* this is the condition for any of the animations to occur */
 body > div > div > div:nth-child(3) > div:last-child > label > input:checked {
     background-color: rgb(0, 255, 0);
 }
 
-/* TODO: should toggle animation so it doesnt stay orange */
 body
     > div
     > div
@@ -460,6 +459,7 @@ body
         div:nth-child(3) div:nth-child(3) label:first-child > input:checked
     ) {
     --on: true;
+    animation: none;
 }
 
 @container wrapper style(--on:true) {
@@ -474,15 +474,19 @@ body
         }
     }
     body > div > div > div:nth-child(2) div {
-        /* --mario-display: */
         display: block;
-        animation-name: mario-fadein-intro, mario-walkin-intro;
-        animation-duration: 5s, 6s;
+
+        animation-name: mario-fadein-intro, mario-walkin-intro, spin, crouch,
+            jump;
+        animation-duration: 5s, 6s, 1s, 0.1s, 0.4s;
+
         animation-timing-function: ease-in, ease-in;
-        animation-delay: 0s, 5s;
-        animation-fill-mode: forwards, forwards;
-        /* animation: mario-fadein-intro 5s ease, mario-walkin-intro 5s 5s ease; */
-        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
+        animation-delay: 0s, 5s, 0s, 0s, 0s;
+        animation-iteration-count: 1, 1, infinite, infinite, infinite;
+        animation-fill-mode: forwards;
+        animation-play-state: running, running, paused, paused, paused;
+
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-front-facing.png);
         background-size: cover;
         background-repeat: no-repeat;
         width: 2em;
@@ -501,9 +505,49 @@ body
     --jump: true;
 }
 
+body
+    div
+    div:has(
+        div:nth-child(3) div:nth-child(2) label:nth-of-type(2) > input:checked
+    ) {
+    --spin: true;
+}
+
+body
+    div
+    div:has(
+        div:first-child > div:nth-child(2) label:nth-of-type(3) > input:checked
+    ) {
+    --crouch: true;
+}
+
 @container wrapper style(--on:true) and style(--jump:true) {
-    div:nth-of-type(2) div {
-        filter: brightness(20);
+    body > div > div > div:nth-of-type(2) div {
+        animation-name: mario-fadein-intro, mario-walkin-intro, spin, crouch,
+            jump;
+        animation-play-state: running, running, paused, paused, running;
+        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.9s;
+    }
+}
+
+@container wrapper style(--on:true) and style(--spin:true) {
+    body > div > div > div:nth-of-type(2) div {
+        animation-name: mario-fadein-intro, mario-walkin-intro, jump, crouch,
+            spin;
+        animation-duration: 5s, 6s, 0.9s, 0.1s, 0.4s;
+
+        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.4s;
+
+        animation-play-state: running, running, paused, paused, running;
+    }
+}
+
+@container wrapper style(--on:true) and style(--crouch:true) {
+    body > div > div > div:nth-of-type(2) div {
+        animation-name: mario-fadein-intro, mario-walkin-intro, spin, jump,
+            crouch;
+        animation-duration: 5s, 6s, 0.4s, 0.9s, 0.1s;
+        animation-play-state: running, running, paused, paused, running;
     }
 }
 
@@ -526,20 +570,9 @@ body
     /* background-color: rebeccapurple; */
 }
 
-/* TODO: The game itself. */
-/* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
-
-/* this is the condition for any of the animations to occur */
-
-/* @container (width >= 703); */
-
-/* h1 {
-    animation: title 5s ease;
-} */
-
-/**======================
+/*======================
  *      ANIMATIONS
- *========================**/
+ *======================*/
 @keyframes title {
     0% {
         color: transparent;
@@ -663,6 +696,7 @@ body
 @keyframes mario-fadein-intro {
     0% {
         opacity: 0;
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
     }
 
     99% {
@@ -676,6 +710,7 @@ body
 
 @keyframes mario-walkin-intro {
     0% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-bros-3-walk.gif);
     }
 
     85% {
@@ -702,22 +737,91 @@ body
     }
 }
 
-@keyframes mario-jump {
+@keyframes jump {
     0% {
-        background: none;
+        translate: 0 0;
+    }
+    .00000001% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
+    }
+
+    50% {
+        translate: 0 -2em;
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
+    }
+
+    99% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-jump.png);
+    }
+
+    100% {
+        translate: 0 0;
+    }
+}
+
+@keyframes spin {
+    0% {
+        height: 32px;
+        translate: 0 0;
+    }
+    .00000001% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-left.png);
+    }
+
+    24% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-left.png);
+        height: 32px;
+        translate: 0 0;
+    }
+    25% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-behind.png);
+        height: 32px;
+        translate: 0 0;
+    }
+
+    49% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-behind.png);
+        height: 32px;
+        translate: 0 0;
+    }
+    50% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-right.png);
+        height: 32px;
+        translate: 0 0;
+    }
+
+    99% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-right.png);
+        height: 32px;
+        translate: 0 0;
+    }
+
+    90% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-front-facing.png);
+        height: 32px;
+        translate: 0 0;
     }
     100% {
-        background: red;
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-front-facing.png);
+        height: 32px;
+        translate: 0 0;
     }
 }
 
-/**======================
- *    STYLE QUERIES
- *========================**/
-@container style(--input-state: unpressed) {
-}
+@keyframes crouch {
+    0% {
+        translate: 0 0;
+    }
 
-@container style(--input-state:pressed) {
+    .0000000000001% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-crouch.png);
+        translate: 0 0;
+    }
+
+    100% {
+        background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-crouch.png);
+        translate: 0 0;
+    }
 }
 
 /**======================
