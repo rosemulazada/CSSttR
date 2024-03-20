@@ -422,9 +422,9 @@ body > div > div > div:nth-child(3) {
                                                    ! DO THE STATE FIRST
  ! =======================================================================================================================**/
 
-/**======================
+/*======================
  *     FUNCTIONALITY
- *========================**/
+ *======================**/
 /* TODO: add styling for pressed button */
 body > div > div > div:nth-child(3) > div:last-child > label {
     width: max-content;
@@ -433,8 +433,6 @@ body > div > div > div:nth-child(3) > div:last-child > label > input {
     width: 5px;
     height: 5px;
 }
-
-/* ! To avoid the game from being played while the device is off, nest all the code for it in the 'checked' command block. This will form a conditional statement. */
 
 body > div > div > div:nth-child(3) > div:last-child > label > input:checked {
     background-color: rgb(0, 255, 0);
