@@ -125,7 +125,6 @@ body {
             }
 
             /* the screen */
-            /* TODO: add 'borders' styling for depth using box-shadow */
             > div:nth-child(2) {
                 grid-row-start: 2;
                 grid-row-end: 4;
@@ -290,7 +289,6 @@ body > div > div > div:nth-child(3) {
         grid-column-end: 4;
         grid-row-start: 2;
 
-        /* TODO: fix buttons need to overlap circle, add padding to edges for this effect.*/
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
@@ -300,7 +298,6 @@ body > div > div > div:nth-child(3) {
                 color: white;
                 display: inline-block;
                 vertical-align: middle;
-                /* TODO: make sure this width scales */
                 width: 35px;
                 height: 35px;
                 text-align: center;
@@ -418,14 +415,23 @@ body > div > div > div:nth-child(3) {
     }
 }
 
-/* !=======================================================================================================================
-                                                   ! DO THE STATE FIRST
- ! =======================================================================================================================**/
+/* styling for the bottom bar */
+body > div > div > div:nth-child(4) {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+        width: 100%;
+        height: 90%;
+        grid-column-start: 2;
+        height: 100%;
+    }
+}
 
 /*======================
  *     FUNCTIONALITY
  *======================**/
-/* TODO: add styling for pressed button */
 body > div > div > div:nth-child(3) > div:last-child > label {
     width: max-content;
 }
@@ -459,7 +465,10 @@ body
         div:nth-child(3) div:nth-child(3) label:first-child > input:checked
     ) {
     --on: true;
-    animation: none;
+    /* animation: none; */
+    label:has(input:checked):before {
+        box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.486);
+    }
 }
 
 /* this is the MAIN condition for any of the animations to occur */
@@ -478,14 +487,14 @@ body
         display: block;
 
         animation-name: mario-fadein-intro, mario-walkin-intro, spin, crouch,
-            jump;
-        animation-duration: 5s, 6s, 1s, 0.1s, 0.4s;
+            jump, super-mario;
+        animation-duration: 5s, 6s, 1s, 0.1s, 0.4s, 0.5s;
 
         animation-timing-function: ease-in, ease-in;
-        animation-delay: 0s, 5s, 0s, 0s, 0s;
-        animation-iteration-count: 1, 1, infinite, infinite, infinite;
+        animation-delay: 0s, 5s, 0s, 0s, 0s, 0s;
+        animation-iteration-count: 1, 1, infinite, infinite, infinite, infinite;
         animation-fill-mode: forwards;
-        animation-play-state: running, running, paused, paused, paused;
+        animation-play-state: running, running, paused, paused, paused, paused;
 
         background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-front-facing.png);
         background-size: cover;
@@ -522,33 +531,49 @@ body
     --crouch: true;
 }
 
+body
+    div
+    div:has(
+        div:first-child > div:nth-child(2) label:nth-of-type(2) > input:checked
+    ) {
+    --super-mario: true;
+}
+
 @container wrapper style(--on:true) and style(--jump:true) {
     body > div > div > div:nth-of-type(2) div {
         animation-name: mario-fadein-intro, mario-walkin-intro, spin, crouch,
-            jump;
-        animation-play-state: running, running, paused, paused, running;
-        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.9s;
+            super-mario, jump;
+        animation-play-state: running, running, paused, paused, paused, running;
+        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.5s, 0.9s;
     }
 }
 
 @container wrapper style(--on:true) and style(--spin:true) {
     body > div > div > div:nth-of-type(2) div {
-        animation-name: mario-fadein-intro, mario-walkin-intro, jump, crouch,
-            spin;
-        animation-duration: 5s, 6s, 0.9s, 0.1s, 0.4s;
+        animation-name: mario-fadein-intro, mario-walkin-intro, jump,
+            super-mario, crouch, spin;
 
-        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.4s;
+        animation-duration: 5s, 6s, 0.4s, 0.1s, 0.5s, 0.4s;
 
-        animation-play-state: running, running, paused, paused, running;
+        animation-play-state: running, running, paused, paused, paused, running;
     }
 }
 
 @container wrapper style(--on:true) and style(--crouch:true) {
     body > div > div > div:nth-of-type(2) div {
         animation-name: mario-fadein-intro, mario-walkin-intro, spin, jump,
-            crouch;
-        animation-duration: 5s, 6s, 0.4s, 0.9s, 0.1s;
-        animation-play-state: running, running, paused, paused, running;
+            super-mario, crouch;
+        animation-duration: 5s, 6s, 0.4s, 0.9s, 0.5s, 0.1s;
+        animation-play-state: running, running, paused, paused, paused, running;
+    }
+}
+
+@container wrapper style(--on:true) and style(--super-mario:true) {
+    body > div > div > div:nth-of-type(2) div {
+        animation-name: mario-fadein-intro, mario-walkin-intro, spin, jump,
+            crouch, super-mario;
+        animation-duration: 5s, 6s, 0.4s, 0.9s, 0.1s, 0.5s;
+        animation-play-state: running, running, paused, paused, paused, running;
     }
 }
 
@@ -560,15 +585,6 @@ body
     > label:last-child
     > input {
     background-color: white;
-}
-
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:nth-child(2):has(input:checked)
-    label:before {
-    /* background-color: rebeccapurple; */
 }
 
 /*======================
@@ -821,6 +837,37 @@ body
 
     100% {
         background-image: url(../assets/images/super-mario-bros-3/super-mario-world-3-mario-sprites-mario-crouch.png);
+        translate: 0 0;
+    }
+}
+
+@keyframes super-mario {
+    0% {
+        translate: 0 0;
+    }
+
+    20% {
+        filter: hue-rotate(90deg);
+        translate: 0 0;
+    }
+
+    40% {
+        filter: hue-rotate(180deg);
+        translate: 0 0;
+    }
+
+    60% {
+        filter: hue-rotate(270deg);
+        translate: 0 0;
+    }
+
+    90% {
+        filter: hue-rotate(300deg);
+        translate: 0 0;
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
         translate: 0 0;
     }
 }
