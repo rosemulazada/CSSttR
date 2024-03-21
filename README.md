@@ -139,3 +139,4 @@ TBA. -->
 4. [Style Queries explained on Chrome for Developers](https://developer.chrome.com/docs/css-ui/style-queries);
 5. [Source of the SONY logo](https://en.m.wikipedia.org/wiki/File:Sony_logo.svg)
 6. [Inspiration for how I put the symbols inside the buttons](https://jsfiddle.net/RbH9N/78/)
+7. [Source of the PSP logo](https://en.m.wikipedia.org/wiki/File:PSP_Logo.svg)
