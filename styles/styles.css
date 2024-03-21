@@ -465,17 +465,25 @@ body
         div:nth-child(3) div:nth-child(3) label:first-child > input:checked
     ) {
     --on: true;
-    /* animation: none; */
     label:has(input:checked):before {
         box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.486);
     }
+}
+
+body
+    > div
+    > div
+    > div:nth-child(3)
+    > div:last-child
+    > label:last-child
+    > input {
+    background-color: white;
 }
 
 /* this is the MAIN condition for any of the animations to occur */
 @container wrapper style(--on:true) {
     body > div > div > div:nth-child(2) {
         animation: screen 5s ease;
-        /* background-image: url(../assets/images/super-mario-bros-3/background.png); */
         --game-background: url(../assets/images/super-mario-bros-3/background.png);
         position: relative;
 
@@ -605,16 +613,6 @@ body
         animation-play-state: running, running, paused, paused, paused, paused,
             running;
     }
-}
-
-body
-    > div
-    > div
-    > div:nth-child(3)
-    > div:last-child
-    > label:last-child
-    > input {
-    background-color: white;
 }
 
 /*======================
