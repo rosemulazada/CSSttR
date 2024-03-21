@@ -96,9 +96,12 @@ TBA. -->
 
 Continuing on from [March 15th: The final intake](#march-15th-the-final-intake), it took me a lot of time to figure out how to stear the buttons and make them do what I wanted. This, and the fact that I had used _checkboxes_ instead of _buttons_ made it complicated to achieve. In hindsight I should have thought through more in depth what I wanted to do and how before choosing the elements for the D-PAD/ANALOG BUTTONS, but I was so focused on the concept of how to toggle code and we had learnt so much about using `:has()` on `input`s that I completely overlooked this and did not make it personal to my goals.
 
+
 All in all, I learned a lot from this project. This was my first time using `display:grid;` so extensively and I instantly found myself using it more. I'm sure there are a lot more clever ways to apply it than how I've done it, but I can see myself learning a lot about it, and I really want to as well; it seems to me like a much more reliable cousin to `display:flex` which I had become so accustomed to using, and if we ignore the finnicking with specific calculations for the `fr`s, it saved me a lot of effort.
 
 Not to mention the things I learned about that I had no idea even existed. I knew of custom properties, I, however, did not know how extensively they could be used. Sanne uses them to structure his code a lot more nicely, to create properties like for example `--hue: 60;` where you only have to pass in a value and it updates the hue. Of course, I used them mostly for colors but also for style queries, something which is also new to me. It's like a way of making your own states in CSS, something which I had ruled out as completely impossible, but it is now; CSS is making advances and this class has opened my eyes up to the insane world of what is possible with it, or more importantly, **without JavaScript.**
+
+**NOTE:** on the style queries: I do think that I could have done this a little better in the parts where I define what should happen if a certain has been pressed AND the device is on, but I couldn't figure out how to make it work in time.
 
 I cannot say this without mentioning `:has()` once again more explicitly. I keep up with new CSS trends as much as I can but I had not heard about this one, nor `:is()` or the apparent `:where()` which also exists?, until Sanne told us about it. _What a life changer._ Things thought to me impossible without JavaScript are now possible in CSS, and shockingly, they are possible with (in certain cases) much more concise code, less lines of it.
 
