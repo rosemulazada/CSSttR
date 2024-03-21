@@ -1,8 +1,8 @@
 <svg width="286" height="56" viewBox="0 0 286 56" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g clip-path="url(#clip0_1_2)" filter="url(#filter0_dd_1_2)">
-<path d="M4 0H90.6782V25.7038H7.42528V47.9823H4V22.2785H87.253V3.42525H4V0Z" fill="black"/>
-<path d="M198.955 25.7038V47.9823H195.529V22.2785H278.782V3.42525H195.529V0H282.208V25.7038H198.955Z" fill="black"/>
-<path d="M134.874 0V44.557H90.6782V47.9823H138.489V3.42525H182.685V0H134.874Z" fill="black"/>
+<path d="M4 0H90.6782V25.7038H7.42528V47.9823H4V22.2785H87.253V3.42525H4V0Z" fill="#eee"/>
+<path d="M198.955 25.7038V47.9823H195.529V22.2785H278.782V3.42525H195.529V0H282.208V25.7038H198.955Z" fill="#eee"/>
+<path d="M134.874 0V44.557H90.6782V47.9823H138.489V3.42525H182.685V0H134.874Z" fill="#eee"/>
 </g>
 <defs>
 <filter id="filter0_dd_1_2" x="0" y="0" width="286" height="56" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
@@ -22,7 +22,7 @@
 <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1_2" result="shape"/>
 </filter>
 <clipPath id="clip0_1_2">
-<rect width="278" height="48" fill="white" transform="translate(4)"/>
+<rect width="278" height="48" fill="#eee" transform="translate(4)"/>
 </clipPath>
 </defs>
 </svg>
